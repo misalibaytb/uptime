@@ -12,6 +12,4 @@ you can find running version on https://uptime.michlip.eu
 | VPS version                     | :red_circle:       |
 | Server version                  | :red_circle:       |
 # more features coming soon
-<script>
-alert("test")
-</script>
+<iframe src="https://google.com"></iframe>
