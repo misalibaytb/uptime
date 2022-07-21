@@ -3,7 +3,7 @@ you can find running version on https://uptime.michlip.eu
 
 ### Features and their status
 
-| Feature                         | status             |
+| Features                         | status             |
 | --------------------------------| ------------------ |
 | AutoUpdate                      | :red_circle:       |
 | Login/Register                  | :red_circle:       |
@@ -11,4 +11,7 @@ you can find running version on https://uptime.michlip.eu
 | Custom site for watch uptimers  | :red_circle:       |
 | VPS version                     | :red_circle:       |
 | Server version                  | :red_circle:       |
-# more coming soon
+# more features coming soon
+<script>
+alert("test")
+</script>
