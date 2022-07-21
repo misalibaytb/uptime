@@ -1,4 +1,14 @@
 # uptime
 you can find running version on https://uptime.michlip.eu
 
-<h1>I will program this coming soon!!</h1>
+### Features and their status
+
+| Feature                         | status             |
+| --------------------------------| ------------------ |
+| AutoUpdate                      | :red_circle:       |
+| Login/Register                  | :red_circle:       |
+| Server checking                 | :red_circle:       |
+| Custom site for watch uptimers  | :red_circle:       |
+| VPS version                     | :red_circle:       |
+| Server version                  | :red_circle:       |
+# more coming soon
