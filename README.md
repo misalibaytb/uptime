@@ -1,9 +1,10 @@
 # uptime
+you can find running version on https://uptime.michlip.eu
+if you want to support us you must go to https://paypal.me/michlipofficial
+
 
 # WARNING
 We do not recommend using this script somewhere where the script is public because personal data could be stolen, but passwords and other sensitive data are hashed in sha512
-
-you can find running version on https://uptime.michlip.eu
 
 ### Features and their status
 
