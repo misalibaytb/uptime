@@ -11,4 +11,5 @@ you can find running version on https://uptime.michlip.eu
 | Custom site for watch uptimers  | :red_circle:       |
 | VPS version                     | :red_circle:       |
 | Server version                  | :red_circle:       |
+| restart on crash & report error | :red_circle:       |
 # more features coming soon
