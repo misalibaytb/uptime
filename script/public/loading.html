@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website still loading</title>
+</head>
+<body>
+    <h1>Oh sorry website currently loading... We have to load all scripts and features (API, admin settigs, database, etc) after complete load you will be redirected</h1>
+    
+    <div class="content">
+        <div class="load">
+            <div class="progress-bar" style="width: 0%;"></div>
+        </div><h1 id="text" class="progress-text">loading%</h1>
+        <button onclick="skip()" class="skip" id="skip" style="display: none;">Skip</button>
+    </div>
+    <style>
+        .progress-text {
+            background: transparent;
+        }
+        .load {
+    width: 300px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #18a3ff80;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #18a3ff;
+    transition: width 0.1s;
+  }
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        function skip() {
+            var ttr = window.location.href + '?skip=true'
+            window.location.href = ttr
+        }
+        let ws
+        function init() {
+            if(ws){
+                ws = null
+                ws.close()
+            }
+            ws = new io()
+            ws.on("message", (message) => console.log(message))
+            ws.on("close", () => {
+                ws = null;
+                console.log('WebSocket closed')
+                init();
+            })
+        }
+        init()
+        ws.on("message", (message) => {
+            document.getElementsByClassName("progress-bar")[0].style.width = message.loaded + "%";
+            document.getElementById("text").innerHTML = message.loaded + "%";
+            if(message.loaded >= 99.99) {setTimeout(() =>window.location.reload(), 2000)}
+            if(message.skip) document.getElementById("skip").style.display = "unset"
+            else document.getElementById("skip").style.display = "none"
+        })
+    </script>
+</body>
+</html>

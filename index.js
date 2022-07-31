@@ -1,11 +1,16 @@
-const express = require("express")
-const app = express()
-const webroot = __dirname + "/public"
-const fs = require("fs")
-require("./url-handler")
-const main = require(__dirname + "/src/main.js")
-const api = require(__dirname + "/src/api.js")
+const { exec } = require('child_process')
+const nodemon = require('nodemon')
+const fs = require('fs')
 
-app.use("/api", api)
-
-app.listen(80)
+x = exec("npm i")
+x.on('close', function() {
+    console.log("checking for updates ...")
+    setTimeout(function() {
+        nodemon({
+            stdout: false,
+            exec: "node ./update.js || node ./restart.js"
+          }).on('readable', function() { // the `readable` event indicates that data is ready to pick up
+            this.stderr.pipe(fs.createWriteStream(__dirname + '/err.txt'))
+          })
+}, 500)
+})
